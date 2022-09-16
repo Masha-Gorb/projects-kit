@@ -1,33 +1,38 @@
-import React from 'react';
-import {useEffect, useState} from "react";
+import React, {useCallback} from 'react';
+import {useEffect} from "react";
 import './MainPage.css';
 import {TasksPropsType, Todolist} from "../Todolist/Todolist";
-import axios from "axios";
 import {AddItemForm} from "../../components/AddItemForm";
-
-export const instance = axios.create({
-  baseURL: 'https://6321e013fd698dfa29017213.mockapi.io/todolists',
-})
+import {useSelector} from "react-redux";
+import {RootStateType} from "../../store/store";
+import {addTodo, deleteTodo, fetchTodos} from "../../store/ActionCreators";
+import {useAppDispatch} from "../../hooks/redux";
 
 export const MainPage = () => {
-  const [todos, setArr] = useState<any>([])
+
+  const todos = useSelector((state: RootStateType) => state.todosSliceReducer.todos)
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
-    fetch('https://6321e013fd698dfa29017213.mockapi.io/todolists').then((res) => {
-      return res.json()
-    }).then((arr) => {
-      console.log(arr)
-      setArr(arr)
-    })
-  }, [])
+    dispatch(fetchTodos())
+  }, [dispatch])
+
+  const addTodolist = useCallback((title: string) => {
+    dispatch(addTodo(title))
+  }, [dispatch])
+
+  const removeTodolist = useCallback(function (id: string) {
+    dispatch(deleteTodo(id))
+    alert(todos)
+  }, [dispatch, todos])
 
   return (
     <div>
-      <h1>todolist feed</h1>
-      <AddItemForm addItem={() => console.log('hh')}/>
+      <h2>поле деятельности :)</h2>
+      <AddItemForm addItem={addTodolist}/>
       <div className="todosBlock">
         {todos.map((t: { title: string; tasks: TasksPropsType[]; id: string; }) => {
-          return <Todolist title={t.title} tasks={t.tasks} id={t.id}/>
+          return <Todolist title={t.title} tasks={t.tasks} id={t.id} deleteTodo={removeTodolist}/>
         })}
       </div>
     </div>
