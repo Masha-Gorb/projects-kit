@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
+import {Header} from "./features/Header/Header";
+import {GreetingPage} from "./features/GreetingPage/GreetingPage";
 
 function App() {
   return (
     <div className="App">
-      <h1>new app</h1>
-      <h1>test commit</h1>
+      <Header/>
+      <GreetingPage/>
     </div>
   );
 }
