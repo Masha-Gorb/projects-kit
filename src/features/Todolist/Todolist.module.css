@@ -1,0 +1,28 @@
+.taskBlock {
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px #699efc;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: -40px;
+    padding-top: 10px;
+    border-radius: 10px;
+
+}
+
+.todolistPaper {
+    width: 300px;
+    height: 500px;
+    padding-top: 2px;
+    padding-left: 10px;
+    background-color: #F2F2F2;
+}
+
+.button {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: solid 2px transparent;
+    border-radius: 25px;
+}

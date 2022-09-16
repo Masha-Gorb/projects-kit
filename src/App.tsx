@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import {Header} from "./features/Header/Header";
-import {GreetingPage} from "./features/GreetingPage/GreetingPage";
+import {MainPage} from "./features/MainPage/MainPage";
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <GreetingPage/>
+      <MainPage/>
     </div>
   );
 }
