@@ -1,5 +1,12 @@
 .todosBlock {
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+  justify-content: center;
 }
+@media (max-width: 768px) {
+  .todosBlock {
+    background-color: rgba(246, 161, 255, 0.27);
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

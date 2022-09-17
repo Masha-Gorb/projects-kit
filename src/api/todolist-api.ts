@@ -23,6 +23,6 @@ export const TodolistAPI = {
     return instance.post<{ title: string }, AxiosResponse<{ item: TodolistApiGetType }>>('', {title});
   },
   deleteTodo(id:string) {
-    return instance.delete<TodolistApiGetType[]>(`/:${id}`)
+    return instance.delete<TodolistApiGetType[]>(`/${id}`)
   },
 }

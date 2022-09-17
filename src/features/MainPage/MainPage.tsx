@@ -23,8 +23,7 @@ export const MainPage = () => {
 
   const removeTodolist = useCallback(function (id: string) {
     dispatch(deleteTodo(id))
-    alert(todos)
-  }, [dispatch, todos])
+  }, [dispatch])
 
   return (
     <div>
