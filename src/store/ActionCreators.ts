@@ -20,6 +20,24 @@ export const addTodo = (title: string) => async (dispatch: AppDispatch) => {
   }
 }
 
+export const createTaskTC = (id: string, title: string) => async (dispatch: AppDispatch) => {
+  try {
+    const response = await TodolistAPI.createTask(id, title)
+    dispatch(todosSlice.actions.createTaskTC(response.data))
+
+  } catch (e) {
+  }
+}
+
+export const deleteTask = (id: string, taskId: string) => async (dispatch: AppDispatch) => {
+  try {
+    const response = await TodolistAPI.deleteTask(id, taskId)
+    dispatch(todosSlice.actions.deleteTaskTC(response.data))
+
+  } catch (e) {
+  }
+}
+
 export const deleteTodo = (id: string) => async (dispatch: AppDispatch) => {
   try {
     const response = await TodolistAPI.deleteTodo(id)
