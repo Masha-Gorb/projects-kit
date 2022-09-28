@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.block {
+    input {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        font-size: 3rem;
+        font-weight: bold;
+        padding: 20px 20px;
+        letter-spacing: 1.3px;
+        outline: none;
+        margin-top: 20px;
+        border-radius: 5px;
+        color: #3a3a3a;
+    }
+}
+
+.currencies {
+    margin-top: 20px;
+
+    button {
+        background-color: #fff2b6;
+        width: 60px;
+        height: 20px;
+        border: transparent;
+        &:hover {
+            background-color: rgb(255, 220, 99);
+        }
+        &:active {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &.active {
+            background-color: #ffdc63;
+            color: #000000;
+        }
+
+    }
+}

@@ -18,7 +18,8 @@ export const MainPage = () => {
   }, [dispatch])
 
   const addTodolist = useCallback((title: string) => {
-    dispatch(addTodo(title))
+    let id = Math.random().toString()
+    dispatch(addTodo(title, id))
   }, [dispatch])
 
   const addTask = useCallback(function (id: string, title: string) {

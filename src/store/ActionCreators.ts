@@ -11,9 +11,9 @@ export const fetchTodos = () => async (dispatch: AppDispatch) => {
   }
 }
 
-export const addTodo = (title: string) => async (dispatch: AppDispatch) => {
+export const addTodo = (title: string, id: string) => async (dispatch: AppDispatch) => {
   try {
-    const response = await TodolistAPI.createTodo(title)
+    const response = await TodolistAPI.createTodo(title, id)
     dispatch(todosSlice.actions.createTodo(response.data))
 
   } catch (e) {

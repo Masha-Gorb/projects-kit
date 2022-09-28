@@ -22,10 +22,13 @@
 .headerLogoText {
     margin-left: 30px;
     color: #699efc;
+    margin-right: 30px;
 }
 .headerText {
-    color: #F2F2F2;
+    color: #bc78ff;
     font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .button {

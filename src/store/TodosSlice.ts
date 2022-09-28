@@ -18,7 +18,7 @@ export const todosSlice = createSlice({
     },
     createTodo(state, action: any) {
       console.log(action.payload)
-      state.todos.push({...action.payload, tasks: []})
+      state.todos.push({...action.payload, id: Math.random().toString(), tasks: []})
     },
     createTaskTC(state, action: any) {
 
