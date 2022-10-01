@@ -1,12 +1,12 @@
 import React, {useCallback} from 'react';
 import {useEffect} from "react";
 import './MainPage.css';
-import {Todolist} from "../Todolist/Todolist";
-import {AddItemForm} from "../../components/AddItemForm";
+import {Todolist} from "../Todolist";
+import {AddItemForm} from "../../../components/AddItemForm";
 import {useSelector} from "react-redux";
-import {RootStateType} from "../../store/store";
-import {addTodo, createTaskTC, deleteTask, deleteTodo, fetchTodos} from "../../store/ActionCreators";
-import {useAppDispatch} from "../../hooks/redux";
+import {RootStateType} from "../../../store/store";
+import {addTodo, createTaskTC, deleteTask, deleteTodo, fetchTodos} from "../../../store/ActionCreators";
+import {useAppDispatch} from "../../../hooks/redux";
 
 export const MainPage = () => {
 

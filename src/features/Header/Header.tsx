@@ -11,6 +11,7 @@ export const Header = () => {
       <Button><Link className={s.headerText} to="/">Приветствие</Link></Button>
       <Button><Link className={s.headerText} to="/todos">Тудулист</Link></Button>
       <Button><Link className={s.headerText} to="/currency">Конвертер валют</Link></Button>
+      <Button><Link className={s.headerText} to="/pagination">Пагинация</Link></Button>
     </div>
   )
 }
