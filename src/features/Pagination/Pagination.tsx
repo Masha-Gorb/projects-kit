@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Pagination, TextField} from "@mui/material";
 import {Post} from "./Post";
+import s from './Pagination.module.css'
 
 const BASE_URL = 'https://hn.algolia.com/api/v1/search?'
 
@@ -16,6 +17,7 @@ export const CustomPagination = () => {
   useEffect(() => {
     axios.get(BASE_URL + `query=${query}&page=${page - 1}`)
       .then(({data}) => {
+        console.log(data)
         setPosts(data.hits)
         setPageAmount(data.nbPages)
 
@@ -26,13 +28,14 @@ export const CustomPagination = () => {
       }, [query, page])
 
     return (
-      <div>
+      <div className={s.paginationContainer}>
         <TextField
           margin="normal"
           label="что ищем?"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
+
         <Pagination
         count={pageAmount}
         page={page}
@@ -40,14 +43,18 @@ export const CustomPagination = () => {
         showFirstButton
         showLastButton
       />
+        <div className={s.pagination}>
           {posts.map(p => {
             return <div key={p.objectID}>
               <Post
-              title={p.title}
-              author={p.author}
-              url={p.url}/>
+                title={p.title}
+                author={p.author}
+                url={p.url}
+                likes={p.points}
+              />
             </div>
           })}
+        </div>
       </div>
     )
   }

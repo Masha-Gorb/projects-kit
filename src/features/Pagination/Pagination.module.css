@@ -1,0 +1,22 @@
+.paginationContainer {
+    display: grid;
+    justify-content: center;
+}
+
+.pagination {
+    display: grid;
+    margin-top: 50px;
+    padding-left: 60px;
+    padding-top: 50px;
+    background-color: rgba(105, 158, 252, 0.49);
+    grid-template-rows: 200px;
+    grid-template-columns: 300px 300px 300px;
+} @media (max-width: 768px) {
+    .pagination {
+        display: flex;
+        background-color: rgba(246, 161, 255, 0.27);
+        padding: 10px 10px 10px 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
